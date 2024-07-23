@@ -14,4 +14,5 @@ use App\Http\Controllers\AnimalController;
 |
 */
 
-Route::get('/', [AnimalController::class, 'index'])->name('animals.index');
+Route::get('/animals', [AnimalController::class, 'index'])->name('animals.index');
+Route::get('/animals/{animal}', [AnimalController::class, 'show'])->name('animals.show');
