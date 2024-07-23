@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
-@section('page-title', '{{ $animal->nome }}')
-
+@section('page-title')
+{{ $animal->nome}} - {{$animal->note}}
+@endsection
 
 @section('main-content')
     <div class="container">
