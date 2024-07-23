@@ -4,5 +4,5 @@
 
 
 @section('main-content')
-<h1>Homepage</h1>
+<h1>Lista animali</h1>
 @endsection
