@@ -20,13 +20,7 @@
                         <h5 class="card-title my-3">Nome: {{$animal->nome}}</h5>
                         <p class="card-text">Specie: {{ $animal->specie }}</p>
                         <p class="card-text">Razza: {{ $animal->razza }}</p>
-                        <p class="card-text">Età: {{ $animal->eta }}</p>
-                        <p class="card-text">Sesso: {{ $animal->sesso }}</p>
-                        <p class="card-text">Colore: {{ $animal->colore }}</p>
-                        <p class="card-text">Peso: {{ $animal->peso }}</p>
-                        <p class="card-text">Altezza: {{ $animal->altezza }}</p>
-                        <p class="card-text">{{ $animal->note }}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="{{ route('animals.show', $animal)}}" class="btn btn-primary">Dettagli</a>
                     </div>
                 </article>
             @endforeach
