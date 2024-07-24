@@ -19,6 +19,8 @@
                     <p class="card-text">Peso: {{ $animal->peso }} kg</p>
                     <p class="card-text">Altezza: {{ $animal->altezza }} cm</p>
                     <p class="card-text">Info: {{ $animal->note }}</p>
+                    <a href="{{ route('animals.index')}}" class="btn btn-primary">Torna alla lista</a>
+                    <a href="{{ route('animals.edit', $animal)}}" class="btn btn-secondary">Modifica</a>
                 </div>
             </article>
         </div>

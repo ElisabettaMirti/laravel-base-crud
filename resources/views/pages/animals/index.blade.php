@@ -21,6 +21,7 @@
                         <p class="card-text">Specie: {{ $animal->specie }}</p>
                         <p class="card-text">Razza: {{ $animal->razza }}</p>
                         <a href="{{ route('animals.show', $animal)}}" class="btn btn-primary">Dettagli</a>
+                        <a href="{{ route('animals.edit', $animal)}}" class="btn btn-secondary">Modifica</a>
                     </div>
                 </article>
             @endforeach
