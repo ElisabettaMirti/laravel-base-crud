@@ -22,6 +22,11 @@
                         <p class="card-text">Razza: {{ $animal->razza }}</p>
                         <a href="{{ route('animals.show', $animal)}}" class="btn btn-primary">Dettagli</a>
                         <a href="{{ route('animals.edit', $animal)}}" class="btn btn-secondary">Modifica</a>
+                        <form action="{{ route('animals.destroy', $animal)}}" method="POST" class="d-inline-block">
+                            @method('DELETE')
+                            @csrf
+                            <button class="btn btn-danger" type="submit">Elimina</button>
+                        </form>
                     </div>
                 </article>
             @endforeach
