@@ -69,7 +69,21 @@ class AnimalController extends Controller
      */
     public function update(Request $request, Animal $animal)
     {
-        //
+        $data = $request->all();
+
+        $animal->nome = $data['nome'];
+        $animal->specie = $data['specie'];
+        $animal->razza = $data['razza'];
+        $animal->eta = $data['eta'];
+        $animal->sesso = $data['sesso'];
+        $animal->colore = $data['colore'];
+        $animal->peso = $data['peso'];
+        $animal->altezza = $data['altezza'];
+        $animal->url_img = $data['url_img'];
+        $animal->note = $data['note'];
+        $animal->update();
+
+        return redirect()->route('animals.show', $animal);
     }
 
     /**
