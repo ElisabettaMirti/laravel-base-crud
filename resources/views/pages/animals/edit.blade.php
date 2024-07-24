@@ -8,7 +8,8 @@ Modifica il profilo di {{ $animal->nome }}
 @section('main-content')
     <div class="container">
         <div class="row justify-content-center">
-            <form class="col-8" action="{{ route('animals.store')}}" method="POST">
+            <form class="col-8" action="{{ route('animals.update', $animal)}}" method="POST">
+                @method("PUT")
                 @csrf
 
                 <h1 class="text-center m-3">Modifica il profilo di {{ $animal->nome }}</h1>
