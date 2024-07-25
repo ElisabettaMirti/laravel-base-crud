@@ -7,6 +7,17 @@ Inserisci un animale
 
 @section('main-content')
     <div class="container">
+        @if ($errors->any())
+            <div class="row">
+                <div class="col-12">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        @endif
         <div class="row justify-content-center">
             <form class="col-8" action="{{ route('animals.store')}}" method="POST">
                 @csrf
