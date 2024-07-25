@@ -17,7 +17,7 @@ class AnimalSeeder extends Seeder
         $animalData = $this->getCsv(__DIR__ . '/../../resources/assets/animali.csv');
 
         foreach ($animalData as $singleAnimal) {
-            $newAnimal = new Animal();
+            $newAnimal = new Animal($singleAnimal);
             $newAnimal->save();
         }
     }

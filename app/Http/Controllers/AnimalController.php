@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Animal;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreAnimalRequest;
+use App\Http\Requests\UpdateAnimalRequest;
 
 class AnimalController extends Controller
 {
@@ -31,7 +33,6 @@ class AnimalController extends Controller
     public function store(StoreAnimalRequest $request)
     {
         $data = $request->validated();
-
         $newAnimal = Animal::create($data);
         return redirect()->route('animals.show', $newAnimal);
     }
@@ -55,23 +56,11 @@ class AnimalController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Animal $animal)
+    public function update(UpdateAnimalRequest $request, Animal $animal)
     {
-        $data = $request->all();
-
-        $animal->nome = $data['nome'];
-        $animal->specie = $data['specie'];
-        $animal->razza = $data['razza'];
-        $animal->eta = $data['eta'];
-        $animal->sesso = $data['sesso'];
-        $animal->colore = $data['colore'];
-        $animal->peso = $data['peso'];
-        $animal->altezza = $data['altezza'];
-        $animal->url_img = $data['url_img'];
-        $animal->note = $data['note'];
-        $animal->update();
-
-        return redirect()->route('animals.show', $animal);
+        $data = $request->validated();
+        $animal->update($data);
+        return redirect()->route('animals.show', $animal)->with('message', $animal->nome . " è stato modificato con successo!!");
     }
 
     /**
