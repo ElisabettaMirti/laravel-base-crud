@@ -18,16 +18,6 @@ class AnimalSeeder extends Seeder
 
         foreach ($animalData as $singleAnimal) {
             $newAnimal = new Animal();
-            $newAnimal->nome = $singleAnimal[0];
-            $newAnimal->specie = $singleAnimal[1];
-            $newAnimal->razza = $singleAnimal[2];
-            $newAnimal->eta = $singleAnimal[3];
-            $newAnimal->sesso = $singleAnimal[4];
-            $newAnimal->colore = $singleAnimal[5];
-            $newAnimal->peso = $singleAnimal[6];
-            $newAnimal->altezza = $singleAnimal[7];
-            $newAnimal->url_img = $faker->imageUrl(640, 480, 'animals', true);
-            $newAnimal->note = $singleAnimal[9];
             $newAnimal->save();
         }
     }
